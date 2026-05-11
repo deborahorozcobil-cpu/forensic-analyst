@@ -1,0 +1,29 @@
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Secrets — NEVER commit these
+.anthropic-key
+*.key
+.env
+.env.*
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Generated reports (these stay in ~/Documents/forensic-reports/, not here, but just in case)
+reports/
+*.md.html
