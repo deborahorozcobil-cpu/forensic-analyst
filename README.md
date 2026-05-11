@@ -18,31 +18,50 @@ Each flag cites the specific line item or footnote, gives year-over-year numbers
 
 ## Install
 
-1. Unzip this folder somewhere stable. Recommended: `~/Projects/forensic-analyst/`.
+### Step 1 — Get the code on your machine
 
-2. Open Terminal and `cd` into the folder. For example:
+Two ways. Either works.
 
+**Option A — Clone with git** (recommended if you'll be updating it later):
+
+```bash
+cd ~/Projects 2>/dev/null || mkdir -p ~/Projects && cd ~/Projects
+git clone https://github.com/deborahorozcobil-cpu/forensic-analyst.git
+cd forensic-analyst
+```
+
+**Option B — Download as a zip** (if you don't have git or just want it once):
+
+1. On the GitHub page, click the green **`<> Code`** button → **Download ZIP**
+2. Move the downloaded zip to `~/Projects/` (or wherever you like) and unzip it
+3. In Terminal:
    ```bash
-   cd ~/Projects/forensic-analyst
+   cd ~/Projects/forensic-analyst-main
+   # (the folder name will end in -main when downloaded as a zip)
    ```
 
-3. Run the installer:
+### Step 2 — Run the installer
 
-   ```bash
-   bash install.sh
-   ```
+From inside the folder:
 
-   It will:
-   - Create a Python virtual environment in `.venv/`
-   - Install dependencies (anthropic, requests, beautifulsoup4, lxml, markdown)
-   - Ask you to paste your API key (input is hidden — won't show on screen)
-   - Save the key to `~/.anthropic-key` with `chmod 600` (only readable by you)
-   - Copy `Forensic Analyst.command` to your Desktop
-   - Add a `forensic` shell alias to your `~/.zshrc`
+```bash
+bash install.sh
+```
 
-   **Important:** when it asks for the key, copy it from console.anthropic.com using the copy button (📋), then in Terminal press Cmd-V (you won't see anything — that's intentional) and press Enter.
+The installer will:
 
-4. Open a **new** Terminal window so the alias loads.
+- Create a Python virtual environment in `.venv/`
+- Install dependencies (anthropic, requests, beautifulsoup4, lxml, markdown)
+- Ask you to paste your Anthropic API key — get one at [console.anthropic.com/settings/keys](https://console.anthropic.com/settings/keys). You'll need at least $5 of credit on your account.
+- Save the key to `~/.anthropic-key` with strict permissions (only readable by you)
+- Copy the `Forensic Analyst.command` launcher to your Desktop
+- Add a `forensic` shell alias to your `~/.zshrc`
+
+**When the installer asks for your API key**: copy it from the Anthropic console with the copy button (📋), come back to Terminal, press **Cmd-V** (input is hidden on purpose — you won't see anything), then press **Enter**.
+
+### Step 3 — Open a new Terminal window
+
+The `forensic` alias only loads in new Terminal sessions. Close the current Terminal window and open a fresh one. Now you can use the tool.
 
 ## Usage
 
